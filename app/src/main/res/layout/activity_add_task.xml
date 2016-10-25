@@ -145,7 +145,7 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/rdate"
+                android:id="@+id/rDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -154,7 +154,7 @@
                 android:inputType="textPersonName" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/btnDateReminder"
                 android:layout_width="43dp"
                 android:layout_height="43dp"
                 android:layout_gravity="center_vertical"
@@ -176,7 +176,7 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/rtime"
+                android:id="@+id/rTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -184,7 +184,7 @@
                 android:inputType="textPersonName" />
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/btnTimeReminder"
                 android:layout_width="43dp"
                 android:layout_height="43dp"
                 android:layout_gravity="center_vertical"
