@@ -82,7 +82,7 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/duedate"
+                android:id="@+id/editTextduedate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -91,7 +91,7 @@
                 android:inputType="textPersonName" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/buttonDueDate"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="55dp"
                 android:layout_height="53dp"
@@ -205,13 +205,6 @@
                 android:layout_weight="0.31"
                 android:text="Save" />
 
-            <Button
-                android:id="@+id/buttonCancel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:text="Cancel" />
         </LinearLayout>
 
         <TextView
