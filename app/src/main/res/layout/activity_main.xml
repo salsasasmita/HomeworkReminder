@@ -21,15 +21,23 @@
         android:layout_height="wrap_content"
         android:text="TextView" />
 
-    <TextView
-        android:id="@+id/textView2"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Commit Dimas" />
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button" />
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/buttonaddsubject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            android:layout_weight="1" />
+    </LinearLayout>
 </LinearLayout>
