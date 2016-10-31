@@ -12,13 +12,14 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
 public class AddTask extends AppCompatActivity implements View.OnClickListener {
 
-    Button bsave, bcancel, btnrDate, btnrTime;
-    EditText etName, etDate, etNotes, etrDate, etrTime;
+    Button bsave, btnrDate, btnrTime, bDueDatePicker;
+    EditText etName, etDueDate, etNotes, etrDate, etrTime;
     Spinner sspinner;
     TextView tvhasil;
     private int mYear, mMonth, mDay, mHour, mMinute;
@@ -29,7 +30,7 @@ public class AddTask extends AppCompatActivity implements View.OnClickListener {
         setContentView(R.layout.activity_add_task);
         setTitle("Add New Task");
         etName = (EditText) findViewById(R.id.taskname);
-        etDate = (EditText) findViewById(R.id.duedate);
+        etDueDate = (EditText) findViewById(R.id.editTextduedate);
         etNotes = (EditText) findViewById(R.id.notes);
         etrDate = (EditText) findViewById(R.id.rDate);
         etrTime = (EditText) findViewById(R.id.rTime);
@@ -37,14 +38,17 @@ public class AddTask extends AppCompatActivity implements View.OnClickListener {
         tvhasil = (TextView) findViewById(R.id.textView10);
         btnrDate = (Button) findViewById(R.id.btnDateReminder);
         btnrTime = (Button) findViewById(R.id.btnTimeReminder);
+        bDueDatePicker = (Button) findViewById(R.id.buttonDueDate);
 
+        bDueDatePicker.setOnClickListener(this);
         btnrDate.setOnClickListener(this);
         btnrTime.setOnClickListener(this);
 
         findViewById(R.id.buttonSave).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvhasil.setText(etName.getText().toString() + " " + etDate.getText().toString() + " " + etNotes.getText().toString() + " " + etrDate.getText().toString()
+                Toast.makeText(getApplicationContext(), "Task has been saved", Toast.LENGTH_LONG).show();
+                tvhasil.setText(etName.getText().toString() + " " + etDueDate.getText().toString() + " " + etNotes.getText().toString() + " " + etrDate.getText().toString()
                         + " " + etrTime.getText().toString());
             }
         });
@@ -63,6 +67,24 @@ public class AddTask extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+        if (v == bDueDatePicker) {
+
+            // Get Current Date
+            final Calendar c = Calendar.getInstance();
+            mYear = c.get(Calendar.YEAR);
+            mMonth = c.get(Calendar.MONTH);
+            mDay = c.get(Calendar.DAY_OF_MONTH);
+
+
+            DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+                @Override
+                public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                    etDueDate.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
+                }
+            }, mYear, mMonth, mDay);
+            datePickerDialog.show();
+        }
+
         if (v == btnrDate) {
             final Calendar c = Calendar.getInstance();
             mYear = c.get(Calendar.YEAR);
