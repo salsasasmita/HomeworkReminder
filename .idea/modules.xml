@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/HomeworksReminder.iml" filepath="$PROJECT_DIR$/HomeworksReminder.iml" />
       <module fileurl="file://$PROJECT_DIR$/TasksReminder.iml" filepath="$PROJECT_DIR$/TasksReminder.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
