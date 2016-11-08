@@ -11,6 +11,7 @@
     tools:context="id.sch.smktelkom_mlg.learn.homeworksreminder.MainActivity">
 
     <TextView
+        android:id="@+id/listsbj"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!" />
@@ -22,22 +23,29 @@
         android:text="TextView" />
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:text="Button" />
 
         <Button
             android:id="@+id/buttonaddsubject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:text="Button" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/listsbj"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="listsbj"
+        android:text="Button" />
 </LinearLayout>

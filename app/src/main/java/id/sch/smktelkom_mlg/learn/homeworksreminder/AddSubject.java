@@ -14,6 +14,7 @@ public class AddSubject extends AppCompatActivity {
     EditText etSubject, etTeacher;
     Button buttonSave;
     TextView tvhasil;
+    DB_Controller controller;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,8 @@ public class AddSubject extends AppCompatActivity {
         tvhasil = (TextView) findViewById(R.id.tvHasil);
         buttonSave = (Button) findViewById(R.id.buttonSave);
 
+        controller = new DB_Controller(this, "", null, 1);
+
         buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -37,7 +40,7 @@ public class AddSubject extends AppCompatActivity {
                     etTeacher.setError("Teacher is empty!");
                 } else {
                     doKlik();
-                    Toast.makeText(getApplicationContext(), "Subject has been added success!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Subject has been added", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -55,11 +58,7 @@ public class AddSubject extends AppCompatActivity {
     }
 
     private void doKlik() {
-
-        StringBuilder builder = new StringBuilder();
-        builder.append("Subject : ").append(etSubject.getText()).append("\n");
-        builder.append("Teacher : ").append(etTeacher.getText()).append("\n");
-
-        tvhasil.setText(builder);
+        controller.insert_subject(etSubject.getText().toString(), etTeacher.getText().toString());
     }
+
 }

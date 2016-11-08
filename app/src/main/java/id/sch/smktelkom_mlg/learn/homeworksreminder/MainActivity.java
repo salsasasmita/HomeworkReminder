@@ -15,8 +15,9 @@ public class MainActivity extends AppCompatActivity {
     Button button;
     DatePicker datePicker;
     Calendar calendar;
-    TextView dateView;
+    TextView dateView, listsbj;
     int year, month, day;
+    DB_Controller controller;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, AddSubject.class));
             }
         });
+        listsbj = (TextView) findViewById(R.id.listsbj);
+        controller = new DB_Controller(this, "", null, 1);
     }
 
+    public void listsbj(View view) {
+        controller.listallsubject(listsbj);
+    }
 }
