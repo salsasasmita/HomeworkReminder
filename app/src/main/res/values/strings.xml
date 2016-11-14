@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">HomeworksReminder</string>
+    <string name="spinner_subject_prompt">Choose subject</string>
+
 </resources>
