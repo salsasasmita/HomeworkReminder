@@ -1,6 +1,6 @@
 #TASKSREMINDER
 
-####Penjelasan Aplikasi.
+####Aplikasi ini
 
 ####Screenshoot Aplikasi.
 
